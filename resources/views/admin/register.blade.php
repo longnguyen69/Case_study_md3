@@ -3,7 +3,6 @@
 
 
 
-
     <!-- main wrapper start -->
     <main>
         <!-- breadcrumb area start -->
@@ -13,10 +12,10 @@
                     <div class="col-12">
                         <div class="breadcrumb-wrap">
                             <nav aria-label="breadcrumb">
-                                <h1>Đăng nhập</h1>
+                                <h1>đăng ký</h1>
                                 <ul class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
+                                    <li class="breadcrumb-item active" aria-current="page">đăng ký</li>
                                 </ul>
                             </nav>
                         </div>
@@ -31,44 +30,53 @@
             <div class="container">
                 <div class="member-area-from-wrap">
                     <div class="row">
-                        <!-- Login Content Start -->
+
+
+                        <!-- Register Content Start -->
                         <div class="col-lg-10">
-                            <div class="login-reg-form-wrap">
-                                <h2>Đăng nhập</h2>
-                                <form action="#" method="post">
+                            <div class="login-reg-form-wrap sign-up-form">
+                                <h2>đăng ký</h2>
+
+                                <form action="{{route('register.admin')}}" method="post">
                                     @csrf
                                     <div class="single-input-item">
-                                        <input type="email" placeholder="Email or Username" name="username" required/>
+                                        <input type="text" placeholder="Full Name" name="username" required/>
+                                    </div>
+                                    <div class="single-input-item">
+                                        <input type="email" placeholder="Enter your Email" name="email" required/>
+                                    </div>
+                                    <div class="single-input-item">
+                                        <input type="text" placeholder="Enter your Address" name="address" required/>
+                                    </div>
+                                    <div class="single-input-item">
+                                        <input type="number" placeholder="Enter your Phone" name="phone" required/>
                                     </div>
                                     <div class="single-input-item">
                                         <input type="password" placeholder="Enter your Password" name="password"
                                                required/>
                                     </div>
                                     <div class="single-input-item">
-                                        <div
-                                            class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                        <div class="login-reg-form-meta">
                                             <div class="remember-meta">
                                                 <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="rememberMe">
-                                                    <label class="custom-control-label" for="rememberMe">Nhớ mật
-                                                        khẩu</label>
+                                                    <input type="checkbox" class="custom-control-input"
+                                                           id="subnewsletter">
+                                                    <label class="custom-control-label" for="subnewsletter">Theo dõi Bản
+                                                        tin của chúng tôi</label>
                                                 </div>
                                             </div>
-                                            <a href="#" class="forget-pwd">Quên mật khẩu?</a>
                                         </div>
                                     </div>
                                     <div class="single-input-item">
                                         <button class="btn btn__bg"
-                                                style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">
-                                            Đăng nhập
+                                                style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);"
+                                                type="submit">Đăng ký
                                         </button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <!-- Login Content End -->
-
-
+                        <!-- Register Content End -->
                     </div>
                 </div>
             </div>
@@ -77,4 +85,4 @@
     </main>
     <!-- main wrapper end -->
 
-@endsection
+@stop

@@ -18,7 +18,6 @@ Route::group(['prefix' => 'cart'], function (){
 });
 
 Route::group(['prefix' => 'checkout'], function (){
-
     Route::get('/','Frontend\CheckoutController@form')->name('checkout');
     Route::post('/','Frontend\CheckoutController@submit_form')->name('checkout');
     Route::get('/checkout-success','Frontend\CheckoutController@success')->name('checkout.success');
@@ -26,6 +25,15 @@ Route::group(['prefix' => 'checkout'], function (){
 
 
 
+
 Route::prefix('admin')->group(function (){
-    Route::get('/','Admin\AdminController@index')->name('admin.home');
+    Route::get('register','Admin\RegisterController@showFormRegister')->name('showRegister');
+    Route::post('register','Admin\RegisterController@register')->name('register.admin');
+    Route::get('login','Admin\LoginController@showFormLogin')->name('showLogin.admin');
+    Route::post('login','Admin\LoginController@login')->name('login.admin');
+    Route::middleware(['auth','checkAdmin'])->group(function (){
+        Route::get('/','Admin\AdminController@index')->name('index.admin');
+    });
+
+
 });
