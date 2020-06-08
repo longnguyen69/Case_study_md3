@@ -27,5 +27,5 @@ Route::group(['prefix' => 'checkout'], function (){
 
 
 Route::prefix('admin')->group(function (){
-    Route::get('/','Admin\HomeController@index')->name('admin.home');
+    Route::get('/','Admin\AdminController@index')->name('admin.home');
 });

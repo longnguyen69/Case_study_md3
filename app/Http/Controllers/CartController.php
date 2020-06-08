@@ -15,7 +15,7 @@ class CartController extends Controller
 //        $this->middleware('loginOrder');
 //    }
 //    this is for test branch
-// Long the fuck
+// Long the fuckkkkkkkkkkkkkkkkkkkkkkkkk
 // Hoa the fuck
 
     public function add(Cart $cart, $id){

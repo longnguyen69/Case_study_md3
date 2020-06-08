@@ -28,7 +28,7 @@ class CheckoutController extends Controller
 
     public function submit_form(Request $request, Cart $cart ){
         if ($orders = Order::create([
-            'account_id' => 1,
+            'user_id' => 1,
             'name' => 'nam'
         ])) {
             $order_id = $orders->id;
