@@ -1,3 +1,4 @@
+
 @extends('../masters')
 @section('main')
 
@@ -7,23 +8,23 @@
     <!-- main wrapper start -->
     <main>
         <!-- breadcrumb area start -->
-        <div class="breadcrumb-area common-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcrumb-wrap">
-                            <nav aria-label="breadcrumb">
-                                <h1>Đăng nhập</h1>
-                                <ul class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="breadcrumb-area common-bg">--}}
+{{--            <div class="container">--}}
+{{--                <div class="row">--}}
+{{--                    <div class="col-12">--}}
+{{--                        <div class="breadcrumb-wrap">--}}
+{{--                            <nav aria-label="breadcrumb">--}}
+{{--                                <h1>Đăng nhập</h1>--}}
+{{--                                <ul class="breadcrumb">--}}
+{{--                                    <li class="breadcrumb-item"><a href="index.html"><i class="fa fa-home"></i></a></li>--}}
+{{--                                    <li class="breadcrumb-item active" aria-current="page">Đăng nhập</li>--}}
+{{--                                </ul>--}}
+{{--                            </nav>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <!-- breadcrumb area end -->
 
         <!-- login register wrapper start -->
@@ -35,33 +36,30 @@
                         <div class="col-lg-10">
                             <div class="login-reg-form-wrap">
                                 <h2>Đăng nhập</h2>
-                                <form action="#" method="post">
+                                @if(isset($mess))
+                                    <p style="color: red;">{{$mess}}</p>
+                                @endif
+                                <form action="{{route('login.admin')}}" method="post">
                                     @csrf
                                     <div class="single-input-item">
-                                        <input type="email" placeholder="Email or Username" name="username" required/>
+                                        <input type="email" placeholder="Email or Username" name="username" required />
                                     </div>
                                     <div class="single-input-item">
-                                        <input type="password" placeholder="Enter your Password" name="password"
-                                               required/>
+                                        <input type="password" placeholder="Enter your Password" name="password" required />
                                     </div>
                                     <div class="single-input-item">
-                                        <div
-                                            class="login-reg-form-meta d-flex align-items-center justify-content-between">
+                                        <div class="login-reg-form-meta d-flex align-items-center justify-content-between">
                                             <div class="remember-meta">
                                                 <div class="custom-control custom-checkbox">
                                                     <input type="checkbox" class="custom-control-input" id="rememberMe">
-                                                    <label class="custom-control-label" for="rememberMe">Nhớ mật
-                                                        khẩu</label>
+                                                    <label class="custom-control-label" for="rememberMe">Nhớ mật khẩu</label>
                                                 </div>
                                             </div>
                                             <a href="#" class="forget-pwd">Quên mật khẩu?</a>
                                         </div>
                                     </div>
                                     <div class="single-input-item">
-                                        <button class="btn btn__bg"
-                                                style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);">
-                                            Đăng nhập
-                                        </button>
+                                        <button class="btn btn__bg" style="background: rgb(131,58,180);background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(252,176,69,0.9248074229691877) 100%);" type="submit">Đăng nhập</button>
                                     </div>
                                 </form>
                             </div>
@@ -77,4 +75,4 @@
     </main>
     <!-- main wrapper end -->
 
-@endsection
+@stop
