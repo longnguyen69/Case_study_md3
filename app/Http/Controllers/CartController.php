@@ -9,7 +9,7 @@ use App\Cart\Cart;
 
 class CartController extends Controller
 {
-
+// day la cac controller
 //    public function __construct()
 //    {
 //        $this->middleware('loginOrder');
