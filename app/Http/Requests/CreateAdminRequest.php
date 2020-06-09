@@ -24,7 +24,7 @@ class CreateAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required|regex:/^([a-zA-Z\.]+)(\s[a-zA-Z\.]+)*$/|min:2|max:32',
+            'username' => 'required|unique:users,username',
             'email'=> 'required|email|unique:users,email',
             'phone' => 'required|min:10|max:12',
             'address' => 'required',
