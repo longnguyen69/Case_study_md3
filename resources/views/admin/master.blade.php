@@ -60,7 +60,7 @@
       <ul class="user-setting-menu">
             <li><a href="javaScript:void();"><i class="icon-user"></i>  My Profile</a></li>
             <li><a href="javaScript:void();"><i class="icon-settings"></i> Setting</a></li>
-      <li><a href="javaScript:void();"><i class="icon-power"></i> Logout</a></li>
+      <li><a href="{{route('admin.logout')}}"><i class="icon-power"></i> Logout</a></li>
       </ul>
      </div>
       </div>
@@ -130,7 +130,7 @@
       <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
       <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
     </ul>
-    
+
     </div>
     <!--End sidebar-wrapper-->
 
