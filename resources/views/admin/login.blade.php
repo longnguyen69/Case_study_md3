@@ -36,9 +36,6 @@
                         <div class="col-lg-10">
                             <div class="login-reg-form-wrap">
                                 <h2>Đăng nhập</h2>
-                                @if(isset($mess))
-                                    <p style="color: red;">{{$mess}}</p>
-                                @endif
                                 <form action="{{route('login.admin')}}" method="post">
                                     @csrf
                                     <div class="single-input-item">
