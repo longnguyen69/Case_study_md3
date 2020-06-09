@@ -8,7 +8,6 @@ Route::get('login','Frontend\LoginController@login')->name('login');
 Route::get('register','Frontend\RegisterController@register')->name('register');
 Route::get('account','Frontend\AccountController@account')->name('account');
 
-
 Route::group(['prefix' => 'cart'], function (){
         Route::get('add/{id}', 'CartController@add')->name('cart.add');
         Route::get('view', 'CartController@view')->name('cart.view');
@@ -23,19 +22,14 @@ Route::group(['prefix' => 'checkout'], function (){
     Route::get('/checkout-success','Frontend\CheckoutController@success')->name('checkout.success');
 });
 
-
-
-
 Route::prefix('admin')->group(function (){
-    Route::get('register','Admin\RegisterController@showFormRegister')->name('showRegister');
-    Route::post('register','Admin\RegisterController@register')->name('register.admin');
-    Route::get('login','Admin\LoginController@showFormLogin')->name('showLogin.admin');
+    Route::get('create','Admin\CreateAdminController@showFormCreate')->name('admin.create');
+    Route::post('create','Admin\CreateAdminController@create');
+    Route::get('login','Admin\LoginController@showFormLogin')->name('admin.login');
     Route::post('login','Admin\LoginController@login')->name('login.admin');
     Route::middleware(['auth','checkAdmin'])->group(function (){
-        Route::get('/','Admin\AdminController@index')->name('index.admin');
+        Route::get('/','Admin\AdminController@index')->name('admin.index');
         Route::get('logout','Admin\LogoutController@logout')->name('admin.logout');
         Route::get('my-profile','Admin\AdminController@showProfile')->name('admin.showProfile');
     });
-
-
 });

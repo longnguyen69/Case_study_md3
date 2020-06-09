@@ -15,10 +15,10 @@ class AdminController extends Controller
         return view('admin.index',compact('user'));
     }
 
-    public function showProfile(){
+    public function showProfile()
+    {
         $user = Auth::user();
         $currentUser = User::find($user->id);
-        return view('admin.myProfile',compact('user'));
+        return view('admin.myProfile', compact('user'));
     }
-
 }

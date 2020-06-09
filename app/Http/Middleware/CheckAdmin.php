@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Http\Controllers\Admin\Role;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,11 +18,9 @@ class CheckAdmin
     public function handle($request, Closure $next)
     {
         $user = Auth::user();
-        if ($user->role == 1){
+        if ($user->role == Role::ADMIN){
             return $next($request);
-        } else {
-            abort(403);
         }
-
+        return abort(403);
     }
 }
