@@ -7,7 +7,7 @@ use App\Http\Requests\AdminLoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class LoginController extends Controller
+class LoginAdminController extends Controller
 {
 
     public function showFormLogin(){
