@@ -14,7 +14,7 @@ class AdminLoginRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return true; //cho nay bat buoc pahi true
     }
 
     /**
