@@ -38,8 +38,6 @@
 <!-- end loader -->
 
 <!-- Start wrapper-->
-
-<<<<<<< HEAD
     <!--Start sidebar-wrapper-->
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
