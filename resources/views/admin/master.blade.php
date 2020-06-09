@@ -12,7 +12,7 @@
   <link href="{{asset('/plugins/vectormap/jquery-jvectormap-2.0.2.css')}}" rel="stylesheet"/>
 
   <link href="{{asset('/plugins/simplebar/css/simplebar.css')}}" rel="stylesheet"/>
- 
+
   <link href="{{asset('/css/bootstrap.min.css')}}" rel="stylesheet"/>
   <!-- animate CSS-->
   <link href="{{asset('/css/animate.css')}}" rel="stylesheet" type="text/css"/>
@@ -22,7 +22,7 @@
   <link href="{{asset('/css/sidebar-menu.css')}}" rel="stylesheet"/>
   <!-- Custom Style-->
   <link href="{{asset('/css/app-style.css')}}" rel="stylesheet"/>
-  
+
 </head>
 
 <body class="bg-theme bg-theme1">
@@ -33,13 +33,13 @@
 
 <!-- Start wrapper-->
  <div id="wrapper">
- 
+
   <!--Start sidebar-wrapper-->
    <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
      <div class="brand-logo">
       <a href="index.html">
        <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
-       <h5 class="logo-text">CoreUi Admin</h5>
+       <h5 class="logo-text">{{}}</h5>
      </a>
    </div>
    <div class="user-details">
@@ -142,7 +142,7 @@
           <small class="badge float-right badge-light">New</small>
         </a>
       </li>
-    
+
      <!--  <li>
         <a href="javaScript:void();" class="waves-effect">
           <i class="zmdi zmdi-email"></i>
@@ -225,9 +225,9 @@
           <small class="badge float-right badge-danger">10</small>
         </a>
       </li> -->
-     
-    
-    <!--  
+
+
+    <!--
      <li>
         <a href="javaScript:void();" class="waves-effect">
           <i class="zmdi zmdi-map"></i> <span>Maps</span>
@@ -238,7 +238,7 @@
           <li><a href="maps-vector.html"><i class="zmdi zmdi-long-arrow-right"></i> Vector Maps</a></li>
         </ul>
        </li> -->
-     
+
      <!--  <li>
         <a href="javaScript:void();" class="waves-effect">
           <i class="zmdi zmdi-collection-folder-image"></i> <span>Sample Pages</span>
@@ -283,7 +283,7 @@
       <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
       <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
     </ul>
-   
+
    </div>
    <!--End sidebar-wrapper-->
 
@@ -303,7 +303,7 @@
       </form>
     </li>
   </ul>
-     
+
   <ul class="navbar-nav align-items-center right-nav-link">
     <li class="nav-item dropdown-lg">
       <a class="nav-link dropdown-toggle dropdown-toggle-nocaret waves-effect" data-toggle="dropdown" href="javascript:void();">
@@ -460,7 +460,7 @@
   <script src="{{asset('/js/jquery.min.js')}}"></script>
   <script src="{{asset('/js/popper.min.js')}}"></script>
   <script src="{{asset('/js/bootstrap.min.js')}}"></script>
-  
+
  <!-- simplebar js -->
   <script src="{{asset('/plugins/simplebar/js/simplebar.js')}}"></script>
   <!-- sidebar-menu js -->
@@ -470,7 +470,7 @@
   <!-- Custom scripts -->
   <script src="{{asset('/js/app-script.js')}}"></script>
 
-  
+
   <script src="{{asset('/plugins/Chart.js/Chart.min.js')}}"></script>
   <!-- Vector map JavaScript -->
   <script src="{{asset('/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
@@ -481,7 +481,7 @@
   <script src="{{asset('/plugins/sparkline-charts/jquery.sparkline.min.js')}}"></script>
   <script src="{{asset('/plugins/jquery-knob/excanvas.js')}}"></script>
   <script src="{{asset('/plugins/jquery-knob/jquery.knob.js')}}"></script>
-    
+
     <script>
         $(function() {
             $(".knob").knob();
@@ -491,6 +491,6 @@
   <!-- <script src="/js/index.js"></script> -->
   <script src="../../../public/js/index.js"></script>
 
-  
+
 </body>
 </html>
