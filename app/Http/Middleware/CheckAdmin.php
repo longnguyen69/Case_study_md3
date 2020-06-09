@@ -20,8 +20,7 @@ class CheckAdmin
         if ($user->role == 1){
             return $next($request);
         } else {
-            $mess = "you are not admin";
-            return redirect()->route('showLogin.admin',compact('mess'));
+            abort(403);
         }
 
     }

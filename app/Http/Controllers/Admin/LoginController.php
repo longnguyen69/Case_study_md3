@@ -21,7 +21,6 @@ class LoginController extends Controller
             'password'=>$password
         ];
 
-//        dd($user);
         if (Auth::attempt($user)){
             return redirect()->route('index.admin');
         } else {
