@@ -56,7 +56,7 @@
             </div>
             <div id="user-dropdown" class="collapse">
                 <ul class="user-setting-menu">
-                    <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+                    <li><a href="{{route('admin.showProfile')}}"><i class="icon-user"></i> My Profile</a></li>
                     <li><a href="#"><i class="icon-settings"></i> Change Password</a></li>
                     <li><a href="{{route('admin.logout')}}"><i class="icon-power"></i>Logout</a></li>
                 </ul>

@@ -18,8 +18,7 @@ class AdminController extends Controller
     public function showProfile(){
         $user = Auth::user();
         $currentUser = User::find($user->id);
-
-
+        return view('admin.myProfile',compact('user'));
     }
 
 }
