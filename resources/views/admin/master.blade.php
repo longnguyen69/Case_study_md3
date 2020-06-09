@@ -87,12 +87,12 @@
             <!-- -------------------------------------form----------------------------------------------------------------------- -->
             <li>
                 <a href="#" class="waves-effect">
-                    <i class="zmdi zmdi-format-list-bulleted"></i> <span>Danh muc</span>
+                    <i class="zmdi zmdi-format-list-bulleted"></i> <span>Categories</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="sidebar-submenu">
-                    <li><a href=""><i class="zmdi zmdi-long-arrow-right"></i>Them moi danh muc</a></li>
-                    <li><a href=""><i class="zmdi zmdi-long-arrow-right"></i>Danh sach danh muc</a></li>
+                    <li><a href="{{route('admin.createCategory')}}"><i class="zmdi zmdi-long-arrow-right"></i>Add New Categories</a></li>
+                    <li><a href="{{route('admin.showCategories')}}"><i class="zmdi zmdi-long-arrow-right"></i>List Categories</a></li>
 
                 </ul>
             </li>
