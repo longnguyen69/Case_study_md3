@@ -30,5 +30,6 @@ Route::prefix('admin')->group(function (){
     Route::middleware(['auth','checkAdmin'])->group(function (){
         Route::get('/','Admin\AdminController@index')->name('admin.index');
         Route::get('logout','Admin\LogoutController@logout')->name('admin.logout');
+        Route::get('my-profile','Admin\AdminController@showProfile')->name('admin.showProfile');
     });
 });
