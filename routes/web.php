@@ -32,6 +32,12 @@ Route::prefix('admin')->group(function (){
         Route::get('logout','Admin\LogoutController@logout')->name('admin.logout');
         Route::get('my-profile','Admin\AdminController@showProfile')->name('admin.showProfile');
         Route::get('{id}/change-password', 'Admin\AdminController@changePass')->name('admin.changePass');
-        Route::post('{id}/change-password', 'AdminController@updatePass');
+        Route::post('{id}/change-password', 'Admin\AdminController@updatePass');
+        Route::get('categories','Admin\AdminCategory@showCategories')->name('admin.showCategories');
+        Route::get('{id}/edit-category','Admin\AdminCategory@edit')->name('admin.editCategory');
+        Route::post('{id}/edit-category','Admin\AdminCategory@update')->name('admin.updateCategory');
+        Route::get('create-category','Admin\AdminCategory@create')->name('admin.createCategory');
+        Route::post('create-category','Admin\AdminCategory@store')->name('admin.storeCategory');
+        Route::get('{id}/delete-category','Admin\AdminCategory@destroy')->name('admin.deleteCategory');
     });
 });

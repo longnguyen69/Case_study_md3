@@ -35,7 +35,8 @@
                 <div class="col-lg-12">
                     <div class="card">
                         <div class="card-body">
-                            <form id="personal-info">
+                            <form id="personal-info" action="{{route('admin.changePass', $user->id)}}" method="post">
+                                @csrf
                                 <h4 class="form-header text-uppercase">
                                     <i class="fa fa-user-circle-o"></i>
                                     Personal Info
@@ -54,6 +55,9 @@
                                                required>
                                         @if($errors->first('oldPass'))
                                             <p class="text-danger">{{$errors->first('oldPass')}}</p>
+                                        @endif
+                                        @if(\Illuminate\Support\Facades\Session::has('error'))
+                                            <p class="text-danger">{{\Illuminate\Support\Facades\Session::get('error')}}</p>
                                         @endif
                                     </div>
                                 </div>
@@ -76,6 +80,14 @@
                                             <p class="text-danger">{{$errors->first('confirmPass')}}</p>
                                         @endif
                                     </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-success btn-round px-5"><i class="icon-lock"></i>
+                                        Update
+                                    </button>
+                                    <a class="btn btn-light btn-round px-5" href="{{route('admin.index')}}"><i class="icon-lock"></i>
+                                        Cancel
+                                    </a>
                                 </div>
                             </form>
                         </div>
