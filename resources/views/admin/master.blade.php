@@ -38,24 +38,26 @@
 <!-- end loader -->
 
 <!-- Start wrapper-->
+<div id="wrapper">
     <!--Start sidebar-wrapper-->
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
         <div class="brand-logo">
-            <a href="index.html">
-                <h5 class="logo-text">Flower</h5>
+            <a href="{{route('admin.index')}}">
+                <h5 class="logo-text">Dashboard</h5>
             </a>
         </div>
         <div class="user-details">
             <div class="media align-items-center user-pointer collapsed" data-toggle="collapse"
                  data-target="#user-dropdown">
                 <div class="media-body">
-                    <h6 class="side-user-name">{{$user->username}}</h6>
+                    <h6 class="side-user-name">{{\Illuminate\Support\Facades\Auth::user()->username}}</h6>
                 </div>
             </div>
             <div id="user-dropdown" class="collapse">
                 <ul class="user-setting-menu">
                     <li><a href="{{route('admin.showProfile')}}"><i class="icon-user"></i> My Profile</a></li>
-                    <li><a href="#"><i class="icon-settings"></i> Change Password</a></li>
+                    <li><a href="{{route('admin.changePass', \Illuminate\Support\Facades\Auth::user()->id)}}"><i
+                                class="icon-settings"></i> Change Password</a></li>
                     <li><a href="{{route('admin.logout')}}"><i class="icon-power"></i>Logout</a></li>
                 </ul>
             </div>
@@ -133,19 +135,22 @@
                 </ul>
             </li>
 
-      <li>
-        <a href="calendar.html" class="waves-effect">
-          <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>
-          <small class="badge float-right badge-light">New</small>
-        </a>
-      </li>
+            <li>
+                <a href="calendar.html" class="waves-effect">
+                    <i class="zmdi zmdi-calendar-check"></i> <span>Calendar</span>
+                    <small class="badge float-right badge-light">New</small>
+                </a>
+            </li>
 
-      <!-- -------------------------------- -->
-      <li class="sidebar-header">LABELS</li>
-      <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a></li>
-      <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-chart-donut text-success"></i> <span>Warning</span></a></li>
-      <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a></li>
-    </ul>
+            <!-- -------------------------------- -->
+            <li class="sidebar-header">LABELS</li>
+            <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-coffee text-danger"></i> <span>Important</span></a>
+            </li>
+            <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-chart-donut text-success"></i>
+                    <span>Warning</span></a></li>
+            <li><a href="javaScript:void();" class="waves-effect"><i class="zmdi zmdi-share text-info"></i> <span>Information</span></a>
+            </li>
+        </ul>
 
     </div>
     <!--End sidebar-wrapper-->
@@ -329,49 +334,94 @@
             </ul>
         </nav>
     </header>
+    <!--End topbar header-->
 
-
-
-<!--End topbar header-->
 @yield('content')
 
+<!--Start Back To Top Button-->
+    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
+    <!--End Back To Top Button-->
 
 
+
+    <!--start color switcher-->
+    <div class="right-sidebar">
+        <div class="switcher-icon">
+            <i class="zmdi zmdi-settings zmdi-hc-spin"></i>
+        </div>
+        <div class="right-sidebar-content">
+
+            <p class="mb-0">Gaussion Texture</p>
+            <hr>
+
+            <ul class="switcher">
+                <li id="theme1"></li>
+                <li id="theme2"></li>
+                <li id="theme3"></li>
+                <li id="theme4"></li>
+                <li id="theme5"></li>
+                <li id="theme6"></li>
+            </ul>
+
+            <p class="mb-0">Gradient Background</p>
+            <hr>
+
+            <ul class="switcher">
+                <li id="theme7"></li>
+                <li id="theme8"></li>
+                <li id="theme9"></li>
+                <li id="theme10"></li>
+                <li id="theme11"></li>
+                <li id="theme12"></li>
+            </ul>
+        </div>
+    </div>
+    <!--Start footer-->
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                Copyright © 2019 CoreUi Admin
+            </div>
+        </div>
+    </footer>
+    <!--End footer-->
+</div>
+<!--end color cwitcher-->
+</body>
 <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('/js/jquery.min.js')}}"></script>
-    <script src="{{asset('/js/popper.min.js')}}"></script>
-    <script src="{{asset('/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('/js/jquery.min.js')}}"></script>
+<script src="{{asset('/js/popper.min.js')}}"></script>
+<script src="{{asset('/js/bootstrap.min.js')}}"></script>
 
-    <!-- simplebar js -->
-    <script src="{{asset('/plugins/simplebar/js/simplebar.js')}}"></script>
-    <!-- sidebar-menu js -->
-    <script src="{{asset('/js/sidebar-menu.js')}}"></script>
-    <!-- loader scripts -->
-    <script src="{{asset('/js/jquery.loading-indicator.html')}}"></script>
-    <!-- Custom scripts -->
-    <script src="{{asset('/js/app-script.js')}}"></script>
+<!-- simplebar js -->
+<script src="{{asset('/plugins/simplebar/js/simplebar.js')}}"></script>
+<!-- sidebar-menu js -->
+<script src="{{asset('/js/sidebar-menu.js')}}"></script>
+<!-- loader scripts -->
+<script src="{{asset('/js/jquery.loading-indicator.html')}}"></script>
+<!-- Custom scripts -->
+<script src="{{asset('/js/app-script.js')}}"></script>
 
 
+<script src="{{asset('/plugins/Chart.js/Chart.min.js')}}"></script>
+<!-- Vector map JavaScript -->
+<script src="{{asset('/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
+<script src="{{asset('/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
+<!-- Easy Pie Chart JS -->
+<script src="{{asset('/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js')}}"></script>
+<!-- Sparkline JS -->
+<script src="{{asset('/plugins/sparkline-charts/jquery.sparkline.min.js')}}"></script>
+<script src="{{asset('/plugins/jquery-knob/excanvas.js')}}"></script>
+<script src="{{asset('/plugins/jquery-knob/jquery.knob.js')}}"></script>
+<script>
+    $(function () {
+        $(".knob").knob();
+    });
+</script>
 
-  <script src="{{asset('/plugins/Chart.js/Chart.min.js')}}"></script>
-  <!-- Vector map JavaScript -->
-  <script src="{{asset('/plugins/vectormap/jquery-jvectormap-2.0.2.min.js')}}"></script>
-  <script src="{{asset('/plugins/vectormap/jquery-jvectormap-world-mill-en.js')}}"></script>
-  <!-- Easy Pie Chart JS -->
-  <script src="{{asset('/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js')}}"></script>
-  <!-- Sparkline JS -->
-  <script src="{{asset('/plugins/sparkline-charts/jquery.sparkline.min.js')}}"></script>
-  <script src="{{asset('/plugins/jquery-knob/excanvas.js')}}"></script>
-  <script src="{{asset('/plugins/jquery-knob/jquery.knob.js')}}"></script>
-    <script>
-        $(function () {
-            $(".knob").knob();
-        });
-    </script>
-
-  <!-- Index js -->
-  <!-- <script src="/js/index.js"></script> -->
-  <script src="{{asset('js/index.js')}}"></script>
+<!-- Index js -->
+<!-- <script src="/js/index.js"></script> -->
+<script src="{{asset('js/index.js')}}"></script>
 
 </body>
 </html>

@@ -10,9 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $user = Auth::user();
-        return view('admin.index',compact('user'));
+        return view('admin.index', compact('user'));
     }
 
     public function showProfile()
@@ -20,5 +21,11 @@ class AdminController extends Controller
         $user = Auth::user();
         $currentUser = User::find($user->id);
         return view('admin.myProfile', compact('user'));
+    }
+
+    public function changePass($id)
+    {
+        $user = User::find($id);
+        return view('admin.changePass', compact('user'));
     }
 }

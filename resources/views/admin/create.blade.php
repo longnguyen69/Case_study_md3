@@ -42,7 +42,8 @@
                                 @csrf
                                 <div class="form-group">
                                     <label for="input-6">Name</label>
-                                    <input type="email" name="username" class="form-control form-control-rounded" id="input-6"
+                                    <input type="email" name="username" class="form-control form-control-rounded"
+                                           id="input-6"
                                            placeholder="Enter Your Username">
                                     @if($errors->first('username'))
                                         <p class="text-danger">{{$errors->first('username')}}</p>

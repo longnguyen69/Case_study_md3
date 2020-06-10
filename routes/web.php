@@ -31,5 +31,7 @@ Route::prefix('admin')->group(function (){
         Route::get('/','Admin\AdminController@index')->name('admin.index');
         Route::get('logout','Admin\LogoutController@logout')->name('admin.logout');
         Route::get('my-profile','Admin\AdminController@showProfile')->name('admin.showProfile');
+        Route::get('{id}/change-password', 'Admin\AdminController@changePass')->name('admin.changePass');
+        Route::post('{id}/change-password', 'AdminController@updatePass');
     });
 });
