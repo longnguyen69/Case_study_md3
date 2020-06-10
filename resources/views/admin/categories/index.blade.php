@@ -43,7 +43,7 @@
                                         <tr>
                                             <th scope="row">{{++$key}}</th>
                                             <td>{{$category->name}}</td>
-                                            <td>...</td>
+                                            <td>{{$category->total()}}</td>
                                             <td>{{$category->created_at}}</td>
                                             <td>
                                                 <a class="btn btn-success" href="{{route('admin.editCategory',['id'=>$category->id])}}">Edit</a>
